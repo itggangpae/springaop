@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="springuser">
+	<select id="login" resultType="SpringUser" parameterType="SpringUser">
+		select email, nickname, image 
+		from springuser
+		where email=#{email} and pw=#{pw} and emailauth = 1
+	</select>
+</mapper>
